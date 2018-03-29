@@ -11,6 +11,7 @@ namespace TSQLLint.Plugins.WhiteSpace
             var preferSpaces = new PreferSpaces(context, reporter);
             var trailingWhiteSpace = new TrailingWhiteSpace(context, reporter);
             var indentation = new Indentation(context, reporter);
+            var lineLength = new LineLength(context, reporter);
 
             string line;
             var lineNumber = 0;
@@ -22,6 +23,7 @@ namespace TSQLLint.Plugins.WhiteSpace
                 preferSpaces.ParseLine(line, lineNumber);
                 trailingWhiteSpace.ParseLine(line, lineNumber);
                 indentation.ParseLine(line, lineNumber);
+                lineLength.ParseLine(line, lineNumber);
             }
         }
     }
